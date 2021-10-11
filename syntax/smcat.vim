@@ -73,6 +73,7 @@ syntax region smcatCommentBlock start=/\/\*/ end=/\*\//
 "highlight default link smcatRuleSection PreProc
 highlight default link smcatKeyword Keyword
 highlight default link smcatTodo Todo
+highlight default link smcatBlockCmd Comment
 "highlight default link smcatIdentifier Identifier
 "highlight default link smcatIdentifierOccurrence Identifier
 "highlight default link smcatIdentifierOffset Identifier
@@ -87,7 +88,7 @@ highlight default link smcatTodo Todo
 "highlight default link smcatNumberFloat Number
 "highlight default link smcatNumberSize Number
 "highlight default link smcatCommentInline Comment
-highlight default link smcatCommentBlock Comment
+"highlight default link smcatCommentBlock Comment
 "
 "
 "
