@@ -40,11 +40,6 @@ endif
 syntax keyword smcatKeyword initial final regular history deephistory choice fork join forkjoin junction parallel terminate 
 syntax keyword smcatTodo contained NOTE TODO ALERT WARNING FIXME BUG XXX WORKING
 
-"" Keywords that are identical to a Vim option have to be defined via match, see
-"" https://vimhelp.org/syntax.txt.html#E789.
-syntax match smcatKeyword /\<contains\>/
-syntax keyword smcatRuleSection condition meta strings
-"
 "" Identifiers
 syntax match smcatIdentifier /#.*/
 "
@@ -62,7 +57,6 @@ syntax match smcatNumberSize /\<\([0-9]\+\|0x[0-9a-fA-F]\+\)\(MB\|KB\)\>/
 syntax match smcatCommentInline /\/\/.*/
 syntax region smcatCommentBlock start=/\/\*/ end=/\*\// contains=smcatTodo
 "
-highlight default link smcatRuleSection PreProc
 highlight default link smcatKeyword Keyword
 highlight default link smcatTodo Todo
 "
