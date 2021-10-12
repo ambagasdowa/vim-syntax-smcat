@@ -37,9 +37,10 @@ endif
 "syntax case match
 "
 " Keywords 
-syntax keyword smcatKeyword initial final 
-syntax keyword smcatBlockCmd initial final 
-syntax keyword smcatTodo contained NOTE ALERT WARNING FIME BUG XXX WORKING
+syntax keyword smcatKeyword initial final regular history deephistory choice fork join forkjoin junction parallel terminate 
+syntax keyword smcatBlockCmd initial final regular history deephistory choice fork join forkjoin junction parallel terminate  
+syntax keyword smcatTodo contained NOTE TODO ALERT WARNING FIME BUG XXX WORKING
+"syntax match smcatCommentBlock "*.*$" contains=smcatTodo
 
 "" Keywords that are identical to a Vim option have to be defined via match, see
 "" https://vimhelp.org/syntax.txt.html#E789.
@@ -68,7 +69,7 @@ syntax keyword smcatTodo contained NOTE ALERT WARNING FIME BUG XXX WORKING
 "" Comments
 
 "syntax match smcatCommentInline /\/\/.*/
-syntax region smcatCommentBlock start=/\/\*/ end=/\*\//
+syntax region smcatCommentBlock start=/\/\*/ end=/\*\// contains=smcatTodo
 "
 "highlight default link smcatRuleSection PreProc
 highlight default link smcatKeyword Keyword
@@ -88,8 +89,7 @@ highlight default link smcatBlockCmd Comment
 "highlight default link smcatNumberFloat Number
 "highlight default link smcatNumberSize Number
 "highlight default link smcatCommentInline Comment
-"highlight default link smcatCommentBlock Comment
-"
+highlight default link smcatCommentBlock Comment
 "
 "
 "" Make sure that the syntax file is loaded at most once.
