@@ -38,9 +38,8 @@ endif
 "
 " Keywords 
 syntax keyword smcatKeyword initial final regular history deephistory choice fork join forkjoin junction parallel terminate 
-syntax keyword smcatBlockCmd initial final regular history deephistory choice fork join forkjoin junction parallel terminate  
+"syntax keyword smcatBlockCmd initial final regular history deephistory choice fork join forkjoin junction parallel terminate  
 syntax keyword smcatTodo contained NOTE TODO ALERT WARNING FIME BUG XXX WORKING
-"syntax match smcatCommentBlock "*.*$" contains=smcatTodo
 
 "" Keywords that are identical to a Vim option have to be defined via match, see
 "" https://vimhelp.org/syntax.txt.html#E789.
@@ -68,13 +67,13 @@ syntax keyword smcatTodo contained NOTE TODO ALERT WARNING FIME BUG XXX WORKING
 "
 "" Comments
 
-"syntax match smcatCommentInline /\/\/.*/
+syntax match smcatCommentInline /\/\/.*/
 syntax region smcatCommentBlock start=/\/\*/ end=/\*\// contains=smcatTodo
 "
 "highlight default link smcatRuleSection PreProc
 highlight default link smcatKeyword Keyword
 highlight default link smcatTodo Todo
-highlight default link smcatBlockCmd Comment
+"highlight default link smcatBlockCmd Comment
 "highlight default link smcatIdentifier Identifier
 "highlight default link smcatIdentifierOccurrence Identifier
 "highlight default link smcatIdentifierOffset Identifier
@@ -88,7 +87,7 @@ highlight default link smcatBlockCmd Comment
 "highlight default link smcatNumberInt Number
 "highlight default link smcatNumberFloat Number
 "highlight default link smcatNumberSize Number
-"highlight default link smcatCommentInline Comment
+highlight default link smcatCommentInline Comment
 highlight default link smcatCommentBlock Comment
 "
 "
