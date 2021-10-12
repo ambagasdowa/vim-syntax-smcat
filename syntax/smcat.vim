@@ -55,10 +55,10 @@ syntax keyword smcatTodo contained NOTE TODO ALERT WARNING FIXME BUG XXX WORKING
 "" Strings
 syntax region smcatStringText start=/"/ end=/"/ skip=/\(\\\\\|\\"\)/ contains=smcatStringTextFormat
 syntax match smcatStringTextFormat /\(\\"\|\\\\\|\\t\|\\n\|\\x[0-9a-fA-F]\{2\}\)/ contained
-syntax match smcatStringHex /{\([-0-9a-fA-F \t()\[\]|?]\|\n\)\+[-0-9a-fA-F()\[\]|?]\([-0-9a-fA-F \t()\[\]|?]\|\n\)\+}/ contains=smcatStringHexFormat
-syntax match smcatStringHexFormat /[-()\[\]|?]/ contained
-syntax region smcatStringRegex start=/\// end=/\// skip=/\(\\\\\|\\\/\)/
-syntax match smcatStringRegexModifiers /\/\@<=[is]\+\>/
+"syntax match smcatStringHex /{\([-0-9a-fA-F \t()\[\]|?]\|\n\)\+[-0-9a-fA-F()\[\]|?]\([-0-9a-fA-F \t()\[\]|?]\|\n\)\+}/ contains=smcatStringHexFormat
+"syntax match smcatStringHexFormat /[-()\[\]|?]/ contained
+"syntax region smcatStringRegex start=/\// end=/\// skip=/\(\\\\\|\\\/\)/
+"syntax match smcatStringRegexModifiers /\/\@<=[is]\+\>/
 "
 "" Numbers
 syntax match smcatNumberInt /\<\([0-9]\+\|0x[0-9a-fA-F]\+\)\>/
@@ -80,10 +80,10 @@ highlight default link smcatTodo Todo
 "highlight default link smcatIdentifierMatchLength Identifier
 highlight default link smcatStringText String
 highlight default link smcatStringTextFormat Special
-highlight default link smcatStringHex String
-highlight default link smcatStringHexFormat Special
-highlight default link smcatStringRegex String
-highlight default link smcatStringRegexModifiers Special
+"highlight default link smcatStringHex String
+"highlight default link smcatStringHexFormat Special
+"highlight default link smcatStringRegex String
+"highlight default link smcatStringRegexModifiers Special
 highlight default link smcatNumberInt Number
 highlight default link smcatNumberFloat Number
 highlight default link smcatNumberSize Number
