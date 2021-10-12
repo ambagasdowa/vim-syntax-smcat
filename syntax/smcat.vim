@@ -38,28 +38,23 @@ endif
 "
 " Keywords 
 syntax keyword smcatKeyword initial final regular history deephistory choice fork join forkjoin junction parallel terminate 
-"syntax keyword smcatBlockCmd initial final regular history deephistory choice fork join forkjoin junction parallel terminate  
 syntax keyword smcatTodo contained NOTE TODO ALERT WARNING FIXME BUG XXX WORKING
 
 "" Keywords that are identical to a Vim option have to be defined via match, see
 "" https://vimhelp.org/syntax.txt.html#E789.
-"syntax match smcatKeyword /\<contains\>/
-"syntax keyword smcatRuleSection condition meta strings
+syntax match smcatKeyword /\<contains\>/
+syntax keyword smcatRuleSection condition meta strings
 "
 "" Identifiers
 syntax match smcatIdentifier /#.*/
-"syntax match smcatIdentifier /$[a-zA-Z0-9_]*/
-"syntax match smcatIdentifierOccurrence /#[a-zA-Z0-9_]*/
-"syntax match smcatIdentifierOffset /@[a-zA-Z0-9_]*\(\[[^\]]\+\]\)\?/
-"syntax match smcatIdentifierMatchLength /![a-zA-Z0-9_]*\(\[[^\]]\+\]\)\?/
 "
 "" Strings
 syntax region smcatStringText start=/"/ end=/"/ skip=/\(\\\\\|\\"\)/ contains=smcatStringTextFormat
 syntax match smcatStringTextFormat /\(\\"\|\\\\\|\\t\|\\n\|\\x[0-9a-fA-F]\{2\}\)/ contained
-"syntax match smcatStringHex /{\([-0-9a-fA-F \t()\[\]|?]\|\n\)\+[-0-9a-fA-F()\[\]|?]\([-0-9a-fA-F \t()\[\]|?]\|\n\)\+}/ contains=smcatStringHexFormat
-"syntax match smcatStringHexFormat /[-()\[\]|?]/ contained
-"syntax region smcatStringRegex start=/\// end=/\// skip=/\(\\\\\|\\\/\)/
-"syntax match smcatStringRegexModifiers /\/\@<=[is]\+\>/
+syntax match smcatStringHex /{\([-0-9a-fA-F \t()\[\]|?]\|\n\)\+[-0-9a-fA-F()\[\]|?]\([-0-9a-fA-F \t()\[\]|?]\|\n\)\+}/ contains=smcatStringHexFormat
+syntax match smcatStringHexFormat /[-()\[\]|?]/ contained
+syntax region smcatStringRegex start=/\// end=/\// skip=/\(\\\\\|\\\/\)/
+syntax match smcatStringRegexModifiers /\/\@<=[is]\+\>/
 "
 "" Numbers
 syntax match smcatNumberInt /\<\([0-9]\+\|0x[0-9a-fA-F]\+\)\>/
@@ -71,22 +66,18 @@ syntax match smcatNumberSize /\<\([0-9]\+\|0x[0-9a-fA-F]\+\)\(MB\|KB\)\>/
 syntax match smcatCommentInline /\/\/.*/
 syntax region smcatCommentBlock start=/\/\*/ end=/\*\// contains=smcatTodo
 "
-"highlight default link smcatRuleSection PreProc
+highlight default link smcatRuleSection PreProc
 highlight default link smcatKeyword Keyword
 highlight default link smcatTodo Todo
-"highlight default link smcatBlockCmd Comment
 "
 highlight default link smcatIdentifier Identifier
-"highlight default link smcatIdentifierOccurrence Identifier
-"highlight default link smcatIdentifierOffset Identifier
-"highlight default link smcatIdentifierMatchLength Identifier
 
 highlight default link smcatStringText String
 highlight default link smcatStringTextFormat Special
-"highlight default link smcatStringHex String
-"highlight default link smcatStringHexFormat Special
-"highlight default link smcatStringRegex String
-"highlight default link smcatStringRegexModifiers Special
+highlight default link smcatStringHex String
+highlight default link smcatStringHexFormat Special
+highlight default link smcatStringRegex String
+highlight default link smcatStringRegexModifiers Special
 highlight default link smcatNumberInt Number
 highlight default link smcatNumberFloat Number
 highlight default link smcatNumberSize Number
