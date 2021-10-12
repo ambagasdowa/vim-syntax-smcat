@@ -22,4 +22,4 @@ syntax match smcatOperator "=>" conceal cchar=⇒
 syntax match smcatOperator "||" conceal cchar=∥
 
 hi! link smcatOperator Operator
-"hi! link Conceal Operator
+hi! link Conceal Operator
