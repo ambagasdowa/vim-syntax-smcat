@@ -56,20 +56,29 @@ syntax match smcatNumberSize /\<\([0-9]\+\|0x[0-9a-fA-F]\+\)\(MB\|KB\)\>/
 
 syntax match smcatCommentInline /\/\/.*/
 syntax region smcatCommentBlock start=/\/\*/ end=/\*\// contains=smcatTodo
-"
-highlight default link smcatKeyword Keyword
-highlight default link smcatTodo Todo
-"
-highlight default link smcatIdentifier Identifier
 
-highlight default link smcatStringText String
-highlight default link smcatStringTextFormat Special
+"" Labels 
+syntax match smcatLabelColon /:/ contained
+syntax match smcatLabel /\w\+:/ contains=smcatLabelColon
 
-highlight default link smcatNumberInt Number
-highlight default link smcatNumberFloat Number
-highlight default link smcatNumberSize Number
-highlight default link smcatCommentInline Comment
-highlight default link smcatCommentBlock Comment
+
+"
+highlight default link smcatKeyword							Keyword
+highlight default link smcatTodo								Todo
+"
+highlight default link smcatIdentifier					Identifier
+
+highlight default link smcatStringText					String
+highlight default link smcatStringTextFormat		Special
+
+highlight default link smcatNumberInt						Number
+highlight default link smcatNumberFloat					Number
+highlight default link smcatNumberSize					Number
+
+highlight default link smcatCommentInline				Comment
+highlight default link smcatCommentBlock				Comment
+
+highlight default link smcatLabel								Label
 "
 "
 "" Make sure that the syntax file is loaded at most once.
