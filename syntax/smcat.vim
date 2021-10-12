@@ -47,10 +47,11 @@ syntax keyword smcatTodo contained NOTE TODO ALERT WARNING FIXME BUG XXX WORKING
 "syntax keyword smcatRuleSection condition meta strings
 "
 "" Identifiers
-syntax match smcatIdentifier /$[a-zA-Z0-9_]*/
-syntax match smcatIdentifierOccurrence /#[a-zA-Z0-9_]*/
-syntax match smcatIdentifierOffset /@[a-zA-Z0-9_]*\(\[[^\]]\+\]\)\?/
-syntax match smcatIdentifierMatchLength /![a-zA-Z0-9_]*\(\[[^\]]\+\]\)\?/
+syntax match smcatIdentifier /#.*/
+"syntax match smcatIdentifier /$[a-zA-Z0-9_]*/
+"syntax match smcatIdentifierOccurrence /#[a-zA-Z0-9_]*/
+"syntax match smcatIdentifierOffset /@[a-zA-Z0-9_]*\(\[[^\]]\+\]\)\?/
+"syntax match smcatIdentifierMatchLength /![a-zA-Z0-9_]*\(\[[^\]]\+\]\)\?/
 "
 "" Strings
 syntax region smcatStringText start=/"/ end=/"/ skip=/\(\\\\\|\\"\)/ contains=smcatStringTextFormat
@@ -76,9 +77,9 @@ highlight default link smcatTodo Todo
 "highlight default link smcatBlockCmd Comment
 "
 highlight default link smcatIdentifier Identifier
-highlight default link smcatIdentifierOccurrence Identifier
-highlight default link smcatIdentifierOffset Identifier
-highlight default link smcatIdentifierMatchLength Identifier
+"highlight default link smcatIdentifierOccurrence Identifier
+"highlight default link smcatIdentifierOffset Identifier
+"highlight default link smcatIdentifierMatchLength Identifier
 
 highlight default link smcatStringText String
 highlight default link smcatStringTextFormat Special
